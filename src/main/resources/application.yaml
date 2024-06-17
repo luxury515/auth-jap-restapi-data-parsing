@@ -1,0 +1,71 @@
+server:
+  port: 8080
+spring:
+  output:
+    ansi:
+      enabled: always
+  application:
+    name: spring-security
+  #  data:
+  #    web:
+  #      pageable:
+  #        default-page-size: 5
+  #        size-parameter: pageSize
+  #        max-page-size: 100
+  #        one-indexed-parameters: false
+  jpa:
+    hibernate:
+      ddl-auto: update #create #create-drop #update
+    #    database-platform: org.hibernate.dialect.MariaDBDialect #org.hibernate.dialect.MySQL5InnoDBDialect #org.hibernate.dialect.MariaDB103Dialect
+    open-in-view: false # waring : spring.jpa.open-in-view is enabled by default.
+    #    generate-ddl: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+#  datasource:
+#    url: jdbc:mariadb://localhost:3306/payment_demo?serverTimezone=UTC&characterEncoding=UTF-8
+#    driver-class-name: org.mariadb.jdbc.Driver #com.mysql.cj.jdbc.Driver  #org.mariadb.jdbc.Driver
+#    hikari:
+#      username: root
+#      password: root
+  datasource:
+    url: jdbc:h2:mem:testdb  # 메모리 모드로 H2 데이터베이스 설정
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true  # H2 콘솔 활성화
+      path: /h2-console  # H2 콘솔 접근 경로 설정 (기본값: /h2-console)
+#spring:
+#  application:
+#    name: spring-security
+#  jpa:
+#    # Provide database platform that is being used
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      # New database is created when application starts and destroyed when application is stopped
+#      ddl-auto: create-drop
+#    # Show sql when spring data jpa performs query
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        # Format queries
+#        format_sql: true
+#  datasource:
+#    # URL connection to database (spring-security is database name)
+#    url: jdbc:h2:mem:spring-security
+#    # H2 sql Driver
+#    driver-class-name: org.h2.Driver
+#    username: root
+#    password: 12345
+#  h2:
+#    console:
+#      enabled: true
+token:
+  signing:
+    key: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351
+logging:
+  level:
+    org.springframework: DEBUG

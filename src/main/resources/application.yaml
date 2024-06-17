@@ -23,21 +23,21 @@ spring:
     properties:
       hibernate:
         format_sql: true
-#  datasource:
-#    url: jdbc:mariadb://localhost:3306/payment_demo?serverTimezone=UTC&characterEncoding=UTF-8
-#    driver-class-name: org.mariadb.jdbc.Driver #com.mysql.cj.jdbc.Driver  #org.mariadb.jdbc.Driver
-#    hikari:
-#      username: root
-#      password: root
   datasource:
-    url: jdbc:h2:mem:testdb  # 메모리 모드로 H2 데이터베이스 설정
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-  h2:
-    console:
-      enabled: true  # H2 콘솔 활성화
-      path: /h2-console  # H2 콘솔 접근 경로 설정 (기본값: /h2-console)
+    url: jdbc:mariadb://localhost:3306/payment_demo?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: org.mariadb.jdbc.Driver #com.mysql.cj.jdbc.Driver  #org.mariadb.jdbc.Driver
+    hikari:
+      username: root
+      password: root
+#  datasource:
+#    url: jdbc:h2:mem:testdb  # 메모리 모드로 H2 데이터베이스 설정
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
+#  h2:
+#    console:
+#      enabled: true  # H2 콘솔 활성화
+#      path: /h2-console  # H2 콘솔 접근 경로 설정 (기본값: /h2-console)
 #spring:
 #  application:
 #    name: spring-security
